@@ -16,10 +16,6 @@ export default class TransactionScreen extends Component {
 
   getCameraPermissions = async domState => {
     const { status } = await Permissions.askAsync(Permissions.CAMERA);
-    //const { status } = Permissions.askAsync(Permissions.CAMERA);
-    //const { status } = await Permissions.askAsync(Permissions);
-    //const { status } = await Permissions.askAsync(CAMERA);
-
     this.setState({
       /*status === "granted" is true when user has granted permission
           status === "granted" is false when user has not granted the permission
@@ -55,37 +51,11 @@ export default class TransactionScreen extends Component {
           {hasCameraPermissions ? scannedData : "Request for Camera Permission"}
         </Text>
         
-        {/*
-          <TouchableOpacity
-            style={[styles.button, { marginTop: 25 }]}
-            onPress= this.getCameraPermissions("scanner")
-          >
-            <Text style={styles.buttonText}>Scan QR Code</Text>
-          </TouchableOpacity> 
-        */}
-        {/*
-          <TouchableOpacity
-            style={[styles.button, { marginTop: 25 }]}
-            onPress={() => this.getCameraPermissions("scanner")}
-          >
-            <Text style={styles.buttonText}>Scan QR Code</Text>
-          </TouchableOpacity> 
-        */}
-        {/*
-          <TouchableOpacity
-            style={[styles.button, { marginTop: 25 }]}
-            onPress={() => this.getCameraPermissions()}
-          >
-            <Text style={styles.buttonText}>Scan QR Code</Text>
-          </TouchableOpacity> 
-        */}
-
-        {/*
-          <TouchableOpacity
-            style={[styles.button, { marginTop: 25 }]}
-            onPress={() => this.getCameraPermissions("scanner")}
-          />
-        */}
+        <TouchableOpacity
+          style={[styles.button, { marginTop: 25 }]}
+          onPress={() => this.getCameraPermissions('Scanner')}>
+          <Text style={styles.buttonText}>Scan QR Code</Text>
+        </TouchableOpacity>
       </View>
     );
   }
